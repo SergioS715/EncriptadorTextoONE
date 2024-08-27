@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto Sergio Sosa</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body class="body">
+    <header>
+        <div>
+        <img src="assets\Logo.png" class="logo" alt="Logo alura">
+    </div>
+    </header>
+        
+    <main>
+
+    <article class="container">
+
+        
+        <div class="izquierda">
+            <textarea id="textoUsuario" class="textoEntrada" placeholder="Ingrese su texto aqui"></textarea>
+            <div class="footer_izquierda">
+                <img src="assets/Group.png" alt="exclamacion">
+                <span>Solo letras minusculas y sin tildes</span>
+                <div class="botones">
+                    <button onclick="encriptar()" class="boton_1"> Encriptar </button>
+                    <button onclick= "desencriptar()"class="boton_2"> Desencriptar </button>
+                </div>
+            </div>
+
+        </div>
+        <div id="divDerecha" class="derecha ajustar">
+            <img src="assets/Muñeco.png" id="personaje" class="personaje" alt="">
+            <textarea id="resultado" class="mensajeFinal ajustar" placeholder="Ningún mensaje fue encontrado"></textarea>
+            <p  class="infoDerecha" id="infoDerecha">Ingresa el texto que desees encriptar o desencriptar</p>
+            <button id="copiar" class="botonCopiar oculto"> Copiar </button>
+        </div>
+        <article>
+    </main>
+  <script src="app.js"></script>
+</body>
+</html>
