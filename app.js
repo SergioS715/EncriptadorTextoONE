@@ -1,10 +1,13 @@
 let a= "hola";
-function contieneMayuscula(cadena) {
+function contieneMayuscula() {
+    let cadena= document.getElementById("textoUsuario").value;
+
     for (let i = 0; i < cadena.length; i++) {
         if (cadena[i] == cadena[i].toUpperCase() && cadena[i] != cadena[i].toLowerCase()) {
             return true;
         }
     }
+    
     return false;
 }
 function esVocal(letra) {
@@ -21,17 +24,21 @@ function cambio(letra) {
 }
 function encriptar()
 {
+    
     let personaje=document.getElementById("personaje");
     let infoDerecha=document.getElementById("infoDerecha");
     let copiar=document.getElementById("copiar");
     let cadena= document.getElementById("textoUsuario").value;
     let divDerecha=document.getElementById("divDerecha")
-    console.log(cadena);
     let resultado=document.getElementById("resultado");
     let nuevaCadena='';
-    for(let i=0;i<cadena.length;i++){
+
+    if(contieneMayuscula()==true){
+        alert("La cadena que ingresaste contiene letras mayusculas o acentos")
+    }
+    else{
+        for(let i=0;i<cadena.length;i++){
             nuevaCadena+=cambio(cadena[i])
-            console.log(nuevaCadena)
         }
     resultado.value=nuevaCadena;
     resultado.innerHTML=nuevaCadena;
@@ -43,6 +50,8 @@ function encriptar()
         divDerecha.style.height = "auto"; // Permite que crezca si es necesario, pero no más pequeño que el mínimo
     resultado.style.minHeight = "300px";
         return nuevaCadena;
+
+    }
 
 
 }
@@ -78,4 +87,5 @@ copiar.addEventListener("click", ()=> {
     document.execCommand('copy')
     
 });
+
 
